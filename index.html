@@ -3,7 +3,8 @@
 </head>
 <body>
     <h1>Привет, <span id="user-name">Гость</span>!</h1>
-    <button id="main-button">Закрыть приложение</button>
+    <button id="main-button">Тык</button>
+    <button id="close-button">Закрыть приложение</button>
 
     <script>
         // Инициализация объекта WebApp
@@ -19,6 +20,11 @@
 
         // Обработка клика по кнопке
         document.getElementById('main-button').addEventListener('click', () => {
+            tg.sendData(tg.WebAppUser); // Mini App
+        });
+
+        // Обработка клика по кнопке
+        document.getElementById('close-button').addEventListener('click', () => {
             tg.close(); // Закрыть Mini App
         });
     </script>
