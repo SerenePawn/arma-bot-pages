@@ -1,0 +1,25 @@
+<head>
+<script src="https://telegram.org/js/telegram-web-app.js?60"></script>
+</head>
+<body>
+    <h1>Привет, <span id="user-name">Гость</span>!</h1>
+    <button id="main-button">Закрыть приложение</button>
+
+    <script>
+        // Инициализация объекта WebApp
+        const tg = window.Telegram.WebApp;
+
+        // Расширяем приложение на все доступное пространство
+        tg.expand();
+
+        // Отображаем имя пользователя из данных инициализации
+        if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
+            document.getElementById('user-name').innerText = tg.initDataUnsafe.user.first_name;
+        }
+
+        // Обработка клика по кнопке
+        document.getElementById('main-button').addEventListener('click', () => {
+            tg.close(); // Закрыть Mini App
+        });
+    </script>
+</body>
