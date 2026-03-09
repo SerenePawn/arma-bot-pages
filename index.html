@@ -20,7 +20,7 @@
 
         // Обработка клика по кнопке
         document.getElementById('main-button').addEventListener('click', () => {
-            tg.sendData(tg.WebAppUser); // Mini App
+            tg.sendData(JSON.stringify({"data": tg.WebAppUser})); // Mini App
         });
 
         // Обработка клика по кнопке
